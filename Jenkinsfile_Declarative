@@ -20,7 +20,7 @@ pipeline {
                     sh """
                         echo "⛔ Stopping Nginx..."
                         ssh -o StrictHostKeyChecking=no ${NginxserverSSHUserName}@${NginxSystemIP} 'sudo systemctl stop nginx || true'
-                        sleep 20
+                        sleep 5
 
                         echo "🧹 Removing old files..."
                         ssh -o StrictHostKeyChecking=no ${NginxserverSSHUserName}@${NginxSystemIP} 'rm -rf /usr/share/nginx/html/* || true'
